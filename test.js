@@ -1,10 +1,11 @@
-// Define a function to add two numbers
-function addNumbers(a, b) {
-    return a + b;
+function updateTime() {
+    const currentTime = new Date();
+    const formattedTime = currentTime.toLocaleTimeString();
+    document.getElementById('time').textContent = formattedTime;
 }
 
-// Use the function to add two numbers
-var result = addNumbers(5, 10);
+// Update the time every second
+setInterval(updateTime, 1000);
 
-// Display the result
-console.log("The sum of 5 and 10 is: " + result);
+// Initialize the time display when the page loads
+window.onload = updateTime;
